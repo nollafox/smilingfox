@@ -1,6 +1,6 @@
 [project]
 name = "smilingfox"
-version = "0.1.0"
+version = "0.0.1"
 description = "Python API and CLI for the SmilingFox E621 image tagger"
 authors = [{ name = "Nolla Fox", email = "nollafox.dev@gmail.com" }]
 readme = "README.md"
