@@ -1,7 +1,14 @@
 # smilingfox
 
 <p align="center">
+  <img src="https://github.com/nollafox/smilingfox/raw/main/docs/banner.png" alt="smilingfox banner" style="border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12); max-width: 100%; height: auto;">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Python-3.10%2B-1E90FF" alt="Python 3.10+">
+  <a href="https://pypi.org/project/smilingfox/">
+    <img src="https://img.shields.io/pypi/v/smilingfox?color=4169E1" alt="PyPI version">
+  </a>
   <a href="https://github.com/nollafox/smilingfox/actions/workflows/test.yml">
     <img src="https://img.shields.io/github/actions/workflow/status/nollafox/smilingfox/test.yml?branch=main&label=tests&color=2E8B57" alt="Test status">
   </a>
@@ -24,25 +31,30 @@ Python API and CLI for the [SmilingFox E621 tagger](https://huggingface.co/nolla
 
 ## Install
 
-Not on PyPI yet, so install from a checkout of this repo.
+```bash
+pipx install smilingfox
+```
 
-If you just want the `smilingfox` command, use [pipx](https://pipx.pypa.io) — it keeps torch/timm and everything else out of your system Python:
+[pipx](https://pipx.pypa.io) keeps torch/timm and everything else out of your system Python. No pipx? `brew install pipx` on macOS, or `python3 -m pip install --user pipx` anywhere, then run `pipx ensurepath` once and restart your shell. Plain `pip install smilingfox` also works — you just lose the isolation.
+
+Confirm it's on your `PATH`:
+
+```bash
+smilingfox --help
+```
+
+### From source
+
+For development on the package itself, or to run an unreleased version:
 
 ```bash
 git clone git@github.com:nollafox/smilingfox.git
 cd smilingfox
-pipx install .
-smilingfox --help
-```
-
-No pipx? `brew install pipx` on macOS, or `python3 -m pip install --user pipx` anywhere, then run `pipx ensurepath` once and restart your shell. `pip install --user .` also works without pipx — you just lose the isolation.
-
-Working on the package itself, use Poetry instead:
-
-```bash
 poetry install
 poetry run smilingfox --help
 ```
+
+`pipx install .` / `pip install --user .` from the checkout also put the `smilingfox` command on `PATH` without going through Poetry.
 
 ## Python API
 
